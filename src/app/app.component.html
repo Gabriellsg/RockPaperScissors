@@ -1,0 +1,49 @@
+<mat-toolbar color="primary"> Rock Paper Scissors </mat-toolbar> 
+  <div class="content">
+    <mat-card>
+        <mat-card-content>
+          <div class="content1">
+              <h2>  Player One</h2>
+              <button mat-fab color="primary" class="score">{{ scores[0] }}</button>
+          </div>
+            <h3 > Weapon Choose: </h3>
+              <div  class="content2">
+                <i [ngClass]="{'selectedWeapon':(playerSelected === 0)}" class="fa fa-hand-rock-o"></i>
+                <i [ngClass]="{'selectedWeapon':(playerSelected === 1)}"  class="fa fa-hand-paper-o"></i>
+                <i [ngClass]="{'selectedWeapon':(playerSelected === 2)}"  class="fa fa-hand-scissors-o"></i>
+              </div>
+        </mat-card-content>   
+    </mat-card>
+
+    <mat-card>
+        <mat-card-content>
+          <div class="content1">
+              <h2>  Player Two</h2>
+              <button mat-fab color="primary" class="score">{{ scores[1] }}</button>
+          </div>
+            <h3 > Weapon Choose: </h3>
+              <div  class="content2">
+                <i [ngClass]="{'selectedWeapon':(playerSelected === 0)}" class="fa fa-hand-rock-o"></i>
+                <i [ngClass]="{'selectedWeapon':(playerSelected === 1)}"  class="fa fa-hand-paper-o"></i>
+                <i [ngClass]="{'selectedWeapon':(playerSelected === 2)}"  class="fa fa-hand-scissors-o"></i>
+              </div>
+        </mat-card-content>   
+    </mat-card>
+    
+  </div>
+
+  <div *ngIf="!isResultShow" class="flex-container flex-center" style="flex-direction: column"> 
+      <div [ngSwitch]="theResult">
+    <ng-template [ngSwitchCase]= "0"> <h1> You're the winner! </h1></ng-template>
+    <ng-template > <h1> Jogador! </h1></ng-template>
+    <!-- <ng-template [ngSwitchCase]= "1"> <h1> You lose. </h1> </ng-template> -->
+    <!-- <ng-template [ngSwitchCase]= "2"> <h1>It's a tie! </h1> </ng-template> -->
+    <ng-template ngSwitchDefault> </ng-template>
+  </div> 
+      <p> Click to start </p>    
+      <button (click)="loadData()" class="btn btn-primary"> Play Game</button>
+      <!-- <button  (click)="reset()" mat-raised-button  color="primary"> Play Game</button> -->
+ </div> 
+  
+  
+  
