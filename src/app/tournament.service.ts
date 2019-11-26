@@ -2,7 +2,7 @@ import { API_URL } from './app.api';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Player } from './shared/Player.model';
-import { HttpClient } from 'selenium-webdriver/http';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'

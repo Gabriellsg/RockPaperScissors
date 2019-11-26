@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TournamentService } from './tournament.service';
+import { Player } from './shared/Player.model';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,31 +8,17 @@ import { TournamentService } from './tournament.service';
 })
 export class AppComponent {
   scores = [0 , 0];
+
+  players = ['Armando', 'Dave', 'Richard', 'Michael', 'Allen', 'Omer', 'David E.', 'Richard X.'];
   weapons = ['rock', 'paper', 'scissors'];
-
-  players = [
-    {
-      name: 'Armando',
-      weapon: 'P'
-    },
-    {
-      name: 'Dave',
-      weapon: 'S'
-    },
-    {
-      name: 'Richard',
-      weapon: 'R'
-    },
-    {
-      name: 'Michael',
-      weapon: 'S'
-    },
-  ];
-
-  playerSelected = -1;
+  dataTable: any[] = [];
+  dataSource: any;
 
 
-  isResultShow = false;
+playerSelected = -1;
+
+
+isResultShow = false;
 
   // theResult -  0 winner
   //              1 lose
@@ -50,7 +37,17 @@ export class AppComponent {
  }
 
  populateGrid() {
-
+  this.players.forEach(element => {
+    this.weapons.forEach(elem => {
+      this.dataTable.push(
+        {
+          transferenciaDetalles: {
+            name: element,
+            weapon: elem,
+          }
+        });
+    });
+  });
  }
 
  reset(): void {
