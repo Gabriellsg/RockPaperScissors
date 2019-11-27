@@ -53,10 +53,7 @@ isResultShow = false;
     for (let index = 0; index < 2; index++) {
       this.playersSelected.push(this.players[Math.floor(Math.random() * this.players.length)]);
     }
-    this.rps_game_winner_load(this.playersSelected);
-  }
 
-  rps_game_winner_load(listSend) {
     this.playersSelected.forEach(element => {
       if (this.playerOne == null) {
         this.playerOne = element.name;
@@ -64,12 +61,31 @@ isResultShow = false;
         this.playerTwo = element.name;
       }
     });
+    this.rps_game_winner_load(this.playersSelected);
+  }
+
+  rps_game_winner_load(listSend) {
+
+    this.convertToListString(listSend);
+
+    console.log('listsend', listSend);
     this.playerOne = this.playersSelected[0];
     this.playerTwo = this.playersSelected[1];
-    console.log(this.playerOne, this.playerTwo);
     this.service.rps_game_winner(listSend).subscribe(resp => {
       console.log(resp);
       this.response = resp;
+    });
+  }
+
+  convertToListString(listOfPlayers) {
+    listOfPlayers.forEach(element => {
+      if (element.weapon === 0) {
+        element.weapon = 'R';
+      } else if (element.weapon === 1) {
+        element.weapon = 'P';
+      } else {
+        element.weapon = 'S';
+      }
     });
   }
 
