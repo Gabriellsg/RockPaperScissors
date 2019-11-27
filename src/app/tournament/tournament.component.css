@@ -1,0 +1,83 @@
+.mat-dialog-title {
+    color: #004481;
+    text-align: center;
+  }
+  
+  p {
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .winner {
+    font-size: 100px;
+  }
+  
+  .content{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 2em;
+  }
+  
+  .flex-container{
+    display:flex;
+    width:100%;
+  }
+  
+  .flex-center{
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .content1{
+    
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+  }
+  
+  .score{
+    margin-top:.5em;
+    margin-left:2em;
+    font-size:1.5em
+  }
+  
+  .content2{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .fa {
+    font-size:5em;
+  }
+  
+
+  .table-container {
+    min-width: 300px;
+  }
+  
+  .mat-table {
+    overflow: auto;
+    table-layout: fixed;
+    border: 1pt;
+    border: 1px solid #dddddd;
+    width: 100%;
+  }
+  
+  .mat-cell {
+    text-align: center;
+    font-family: "BentonSansBBVA-Book";
+    word-wrap: break-word;
+    width: auto;
+    border-bottom: 0px;
+    font-size: 12px;
+    color: #666666;
+  }
+
+  .mat-header-cell {
+    text-align: center;
+    position: sticky;
+    top: 0;
+    word-wrap: break-word;
+    /* overflow: auto; */
+    color: #043263;
+    font-family: "BentonSansBBVA-Medium";
+    background-color: #FFF;
+  }

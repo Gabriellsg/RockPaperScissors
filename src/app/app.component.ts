@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TournamentService } from './tournament.service';
 import { Player } from './shared/Player.model';
+import { MatDialog } from '@angular/material';
+import { TournamentComponent } from './tournament/tournament.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -28,7 +30,10 @@ export class AppComponent implements OnInit {
   ngOnInit() {
   }
 
-  constructor( private service: TournamentService ) { }
+  constructor(
+    private service: TournamentService,
+    private dialog: MatDialog,
+    ) { }
 
   loadData() {
     this.clear();
@@ -121,4 +126,14 @@ export class AppComponent implements OnInit {
     this.scores = [0 , 0];
 
   }
-}
+
+    loadTournment() {
+      const dialogRef = this.dialog.open(TournamentComponent, {
+        width: '70%',
+        height: '80'
+      });
+
+      // dialogRef.componentInstance.solicitud = solicitud;
+    }
+  }
+

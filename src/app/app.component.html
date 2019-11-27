@@ -40,6 +40,14 @@
   </div> 
       <button (click)="loadData()" class="btn btn-primary"> Play Game</button>
  </div> 
+
+ <div class="flex-container flex-left" style="flex-direction: column"> 
+    <div *ngIf="theResult">
+      <h1> You're the winner! </h1>
+      <h2 class="winner"> {{ firstWin ? playerOne.name : playerTwo.name}} </h2>
+  </div> 
+      <button (click)="loadTournment()" class="btn btn-primary"> Play Game</button>
+ </div> 
   
   
   

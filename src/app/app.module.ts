@@ -10,11 +10,13 @@ import {MatButtonModule,
   MatCheckboxModule,
   MatCardModule,
   MatProgressSpinnerModule,
- MatToolbarModule} from '@angular/material';
+ MatToolbarModule, MatDialogModule, MatTableModule } from '@angular/material';
+import { TournamentComponent } from './tournament/tournament.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TournamentComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,24 @@ import {MatButtonModule,
     MatCardModule,
     MatButtonModule,
     MatCheckboxModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatDialogModule,
+    MatTableModule
+  ],
+  exports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatProgressSpinnerModule,
+    MatDialogModule
+  ],
+  entryComponents: [
+    TournamentComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
