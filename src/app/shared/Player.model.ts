@@ -1,3 +1,5 @@
-export interface Player {
-    
-}
+
+export class Player {
+    name: string;
+    weapon: string;
+  }
