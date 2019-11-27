@@ -1,5 +1,13 @@
+.title {
+  font-size: x-large;
+}
+
 p {
-  font-family: Lato;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.winner {
+  font-size: 100px;
 }
 
 .content{
@@ -7,6 +15,7 @@ p {
   grid-template-columns: 1fr 1fr;
   padding: 2em;
 }
+
 .flex-container{
   display:flex;
   width:100%;
@@ -16,10 +25,6 @@ p {
   align-items: center;
   justify-content: center;
 }
-/* mat-card-content{
-  display:grid;
-  grid-template-columns: 2fr 1fr;
-} */
 
 .content1{
   

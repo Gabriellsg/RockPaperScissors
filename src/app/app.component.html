@@ -1,10 +1,11 @@
-<mat-toolbar color="primary"> Rock Paper Scissors </mat-toolbar> 
+<mat-toolbar class="title" color="warn"><h1> Rock Paper Scissor </h1></mat-toolbar> 
   <div class="content">
+    
     <mat-card>
         <mat-card-content>
           <div class="content1" >
               <h2>  {{playerOne.name ? playerOne.name : "Player One"}}</h2>
-              <button mat-fab color="primary" class="score">{{ scores[0] }}</button>
+              <button mat-fab color="warn" class="score">{{ scores[0] }}</button>
           </div>
             <h3 > Chosen Weapon : </h3>
               <div  class="content2">
@@ -19,7 +20,7 @@
         <mat-card-content>
           <div class="content1">
               <h2>  {{playerTwo.name ? playerTwo.name : "Player Two"}}</h2>
-              <button mat-fab color="primary" class="score">{{ scores[1] }}</button>
+              <button mat-fab color="warn" class="score">{{ scores[1] }}</button>
           </div>
             <h3 > Chosen Weapon </h3>
             <div  class="content2">
@@ -32,17 +33,12 @@
     
   </div>
 
-  <div *ngIf="!isResultShow" class="flex-container flex-center" style="flex-direction: column"> 
-      <div [ngSwitch]="theResult">
-    <h1> You're the winner! </h1>
-    <ng-template > <h1> Jogador! </h1></ng-template>
-    <!-- <ng-template [ngSwitchCase]= "1"> <h1> You lose. </h1> </ng-template> -->
-    <!-- <ng-template [ngSwitchCase]= "2"> <h1>It's a tie! </h1> </ng-template> -->
-    <ng-template ngSwitchDefault> </ng-template>
+  <div class="flex-container flex-center" style="flex-direction: column"> 
+    <div *ngIf="theResult">
+      <h1> You're the winner! </h1>
+      <h2 class="winner"> {{ firstWin ? playerOne.name : playerTwo.name}} </h2>
   </div> 
-      <!-- <p> Click to start </p>     -->
       <button (click)="loadData()" class="btn btn-primary"> Play Game</button>
-      <!-- <button  (click)="reset()" mat-raised-button  color="primary"> Play Game</button> -->
  </div> 
   
   
