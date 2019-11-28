@@ -4,7 +4,7 @@
             <mat-card-content>
               <div class="content1" >
                   <h2>  {{playerOne.name ? playerOne.name : "Player One"}}</h2>
-                  <button mat-fab color="warn" class="score">{{ scores[0] }}</button>
+                  <button mat-fab color="primary" class="score">{{ scores[0] }}</button>
               </div>
                 <h3 > Chosen Weapon : </h3>
                   <div  class="content2">
@@ -33,17 +33,15 @@
       </div>
 
       <div class="flex-container flex-center" style="flex-direction: column"> 
-          <div *ngIf="theResult">
-            <h1> You're the winner! </h1>
+        <div *ngIf="theResult">
+            <h3> You're the winner! </h3>
             <h2 class="winner"> {{ firstWin ? playerOne.name : playerTwo.name}} </h2>
         </div> 
-            <button (click)="loadData()" class="btn btn-lg btn-block btn-primary"> Play Game</button>
+            <!-- <button (click)="loadData()" class="btn btn-primary btn-lg"> Play Game</button>
+            <button (click)="loadTournment()" class="btn btn-danger btn-lg"> Play Tournament</button> -->
        </div> 
-      
-       <div class="flex-container flex-left" style="flex-direction: column"> 
-          <div *ngIf="theResult">
-            <h1> You're the winner! </h1>
-            <h2 class="winner"> {{ firstWin ? playerOne.name : playerTwo.name}} </h2>
+
+       <div class="flex-container flex-center" style="flex-direction: row"> 
+                <button (click)="loadData()" class="btn btn-primary btn-lg"> Play Game</button>
+                <button (click)="loadTournment()" class="btn btn-danger btn-lg"> Play Tournament</button>
         </div> 
-            <button (click)="loadTournment()" class="btn btn-lg btn-block btn-primary"> Play Tournament</button>
-       </div> 

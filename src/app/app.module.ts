@@ -12,7 +12,6 @@ import {MatButtonModule,
   MatProgressSpinnerModule,
  MatToolbarModule, MatDialogModule, MatTableModule } from '@angular/material';
 import { TournamentComponent } from './Modules/tournament/tournament.component';
-import { MultiplayerComponent } from './Modules/multiplayer/multiplayer.component';
 import { HeaderComponent } from './Modules/header/header.component';
 import { ContentComponent } from './Modules/content/content.component';
 import { FooterComponent } from './Modules/footer/footer.component';
@@ -21,7 +20,6 @@ import { FooterComponent } from './Modules/footer/footer.component';
   declarations: [
     AppComponent,
     TournamentComponent,
-    MultiplayerComponent,
     HeaderComponent,
     ContentComponent,
     FooterComponent
@@ -53,7 +51,6 @@ import { FooterComponent } from './Modules/footer/footer.component';
   ],
   entryComponents: [
     TournamentComponent,
-    MultiplayerComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

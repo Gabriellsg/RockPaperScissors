@@ -3,25 +3,39 @@
       <h1 mat-dialog-title>Tournament</h1>
    
         <table mat-table [dataSource]="this.playersTournment">  
-                <ng-container matColumnDef="Player">
-                  <th mat-header-cell *matHeaderCellDef> Player </th>
-                  <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                <ng-container matColumnDef="Player1">
+                  <th mat-header-cell *matHeaderCellDef> Player 1</th>
+                  <td mat-cell *matCellDef="let element;"> {{element[0].name}} </td>
                 </ng-container>
 
-                <ng-container matColumnDef="Weapon">
-                    <th mat-header-cell *matHeaderCellDef> Weapon </th>
-                    <td mat-cell *matCellDef="let element">
-                        <i *ngIf="element.weapon === 'R'" class="fa fa-hand-rock-o"></i>
-                        <i *ngIf="element.weapon === 'P'" class="fa fa-hand-paper-o"></i>
-                        <i *ngIf="element.weapon === 'S'"  class="fa fa-hand-scissors-o"></i>
-                    </td>
+                <ng-container matColumnDef="WeaponPlayer1">
+                        <th mat-header-cell *matHeaderCellDef> Weapon Player 1 </th>
+                        <td mat-cell *matCellDef="let element">
+                            <i *ngIf="element[0].weapon === 'R'" class="fa fa-hand-rock-o"></i>
+                            <i *ngIf="element[0].weapon === 'P'" class="fa fa-hand-paper-o"></i>
+                            <i *ngIf="element[0].weapon === 'S'"  class="fa fa-hand-scissors-o"></i>
+                        </td>
                 </ng-container>
 
-                <!-- <ng-container matColumnDef="Winner">
-                  <th mat-header-cell *matHeaderCellDef> Winner </th>
-                  <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-                </ng-container>        -->
-            
+                <ng-container matColumnDef="vs">
+                        <th mat-header-cell *matHeaderCellDef> VS </th>
+                        <td mat-cell *matCellDef="let element"> VS  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="WeaponPlayer2">
+                        <th mat-header-cell *matHeaderCellDef> Weapon Player 2 </th>
+                        <td mat-cell *matCellDef="let element">
+                            <i *ngIf="element[1].weapon === 'R'" class="fa fa-hand-rock-o"></i>
+                            <i *ngIf="element[1].weapon === 'P'" class="fa fa-hand-paper-o"></i>
+                            <i *ngIf="element[1].weapon === 'S'"  class="fa fa-hand-scissors-o"></i>
+                        </td>
+                    </ng-container>
+
+                <ng-container matColumnDef="Player2">
+                        <th mat-header-cell *matHeaderCellDef> Player 2 </th>
+                        <td mat-cell *matCellDef="let element;"> {{element[1].name}} </td>
+                      </ng-container>
+         
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
@@ -29,8 +43,8 @@
 
 <div class="flex-container flex-center" style="flex-direction: column"> 
     <div >
-        <h1> You're the winner! </h1>
-        <!-- <h2 class="winner"> {{ firstWin ? playerOne.name : playerTwo.name}} </h2> -->
+        <h3> You're the winner! </h3>
+        <h2 class="winner"> {{ playerWinner.Name ? playerWinner.Name : ''}} </h2>
     </div> 
-        <button (click)="ResultTournment()" class="btn btn-primary"> Play Game</button>
+        <button (click)="ResultTournment()" class="btn btn-primary btn-lg"> Play Game</button>
 </div> 

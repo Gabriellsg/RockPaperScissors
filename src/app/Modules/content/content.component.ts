@@ -125,16 +125,20 @@ export class ContentComponent implements OnInit {
     this.players = [];
     this.playersSelected = [];
     this.scores = [0 , 0];
-
+    this.playerWinner = { Name: null, Weapon: null};
+    this.playerOne = { name: null, weapon: null};
+    this.playerTwo = { name: null, weapon: null};
   }
 
     loadTournment() {
       const dialogRef = this.dialog.open(TournamentComponent, {
-        width: '80%',
-        height: '90%'
+        width: '85%',
+        height: '95%',
+        disableClose: true
       });
 
-      // dialogRef.componentInstance.solicitud = solicitud;
-    }
-
+      dialogRef.afterClosed().subscribe(result => {
+        this.clear();
+    });
+  }
 }
