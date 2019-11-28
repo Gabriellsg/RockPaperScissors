@@ -18,7 +18,6 @@ export class TournamentService {
   }
 
   rps_tournament_winner(listPlayer: any[]): Observable<any> {
-    console.log('listP', listPlayer);
     return this.http.post<any>(this.RSP_GAME_TOURNAMENT_API, listPlayer);
   }
 }

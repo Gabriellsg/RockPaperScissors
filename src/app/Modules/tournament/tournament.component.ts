@@ -49,7 +49,6 @@ export class TournamentComponent implements OnInit {
           this.playerWinner.Name = element.name;
           this.playerWinner.Weapon = element.weapon;
         });
-        console.log('resp', resp);
       }
     });
   }

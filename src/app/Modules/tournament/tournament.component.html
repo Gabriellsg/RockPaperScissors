@@ -43,7 +43,9 @@
 
 <div class="flex-container flex-center" style="flex-direction: column"> 
     <div >
-        <h3> You're the winner! </h3>
+        <div *ngIf="playerWinner.Name">
+            <h3> You're the winner! </h3>
+        </div>
         <h2 class="winner"> {{ playerWinner.Name ? playerWinner.Name : ''}} </h2>
     </div> 
         <button (click)="ResultTournment()" class="btn btn-primary btn-lg"> Play Game</button>
