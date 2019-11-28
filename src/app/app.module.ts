@@ -11,12 +11,20 @@ import {MatButtonModule,
   MatCardModule,
   MatProgressSpinnerModule,
  MatToolbarModule, MatDialogModule, MatTableModule } from '@angular/material';
-import { TournamentComponent } from './tournament/tournament.component';
+import { TournamentComponent } from './Modules/tournament/tournament.component';
+import { MultiplayerComponent } from './Modules/multiplayer/multiplayer.component';
+import { HeaderComponent } from './Modules/header/header.component';
+import { ContentComponent } from './Modules/content/content.component';
+import { FooterComponent } from './Modules/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TournamentComponent
+    TournamentComponent,
+    MultiplayerComponent,
+    HeaderComponent,
+    ContentComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +53,7 @@ import { TournamentComponent } from './tournament/tournament.component';
   ],
   entryComponents: [
     TournamentComponent,
+    MultiplayerComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

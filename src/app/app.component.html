@@ -1,5 +1,12 @@
-<mat-toolbar class="title" color="warn"><h1> Rock Paper Scissor </h1></mat-toolbar> 
-  <div class="content">
+<div class="content-principal">
+    <app-header></app-header>
+    <app-content></app-content>
+    <app-footer></app-footer>
+</div>
+
+
+<!-- <mat-toolbar class="title" color="warn"><h1> Rock Paper Scissor </h1></mat-toolbar>  -->
+  <!-- <div class="content">
     
     <mat-card>
         <mat-card-content>
@@ -31,14 +38,14 @@
         </mat-card-content>   
     </mat-card>
     
-  </div>
+  </div> -->
 
-  <div class="flex-container flex-center" style="flex-direction: column"> 
+  <!-- <div class="flex-container flex-center" style="flex-direction: column"> 
     <div *ngIf="theResult">
       <h1> You're the winner! </h1>
       <h2 class="winner"> {{ firstWin ? playerOne.name : playerTwo.name}} </h2>
   </div> 
-      <button (click)="loadData()" class="btn btn-primary"> Play Game</button>
+      <button (click)="loadData()" class="btn btn-lg btn-block btn-primary"> Play Game</button>
  </div> 
 
  <div class="flex-container flex-left" style="flex-direction: column"> 
@@ -46,8 +53,8 @@
       <h1> You're the winner! </h1>
       <h2 class="winner"> {{ firstWin ? playerOne.name : playerTwo.name}} </h2>
   </div> 
-      <button (click)="loadTournment()" class="btn btn-primary"> Play Game</button>
- </div> 
+      <button (click)="loadTournment()" class="btn btn-lg btn-block btn-primary"> Play Tournament</button>
+ </div>  -->
   
   
   

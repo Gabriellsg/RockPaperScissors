@@ -1,6 +1,7 @@
 .mat-dialog-title {
     color: #004481;
     text-align: center;
+    font-size: x-large;
   }
   
   p {
@@ -11,11 +12,11 @@
     font-size: 100px;
   }
   
-  .content{
+  /* .content{
     display:grid;
     grid-template-columns: 1fr 1fr;
     padding: 2em;
-  }
+  } */
   
   .flex-container{
     display:flex;
@@ -34,8 +35,7 @@
   }
   
   .score{
-    margin-top:.5em;
-    margin-left:2em;
+    float: right;
     font-size:1.5em
   }
   

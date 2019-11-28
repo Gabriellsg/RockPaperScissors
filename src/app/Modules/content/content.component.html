@@ -1,0 +1,49 @@
+<div class="content">
+    
+        <mat-card>
+            <mat-card-content>
+              <div class="content1" >
+                  <h2>  {{playerOne.name ? playerOne.name : "Player One"}}</h2>
+                  <button mat-fab color="warn" class="score">{{ scores[0] }}</button>
+              </div>
+                <h3 > Chosen Weapon : </h3>
+                  <div  class="content2">
+                    <i *ngIf="playerOne.weapon === 'R'" class="fa fa-hand-rock-o"></i>
+                    <i *ngIf="playerOne.weapon === 'P'" class="fa fa-hand-paper-o"></i>
+                    <i *ngIf="playerOne.weapon === 'S'"  class="fa fa-hand-scissors-o"></i>
+                  </div>
+            </mat-card-content>   
+        </mat-card>
+    
+        <mat-card>
+            <mat-card-content>
+              <div class="content1">
+                  <h2>  {{playerTwo.name ? playerTwo.name : "Player Two"}}</h2>
+                  <button mat-fab color="warn" class="score">{{ scores[1] }}</button>
+              </div>
+                <h3 > Chosen Weapon </h3>
+                <div  class="content2">
+                  <i *ngIf="playerTwo.weapon === 'R'" class="fa fa-hand-rock-o"></i>
+                  <i *ngIf="playerTwo.weapon === 'P'" class="fa fa-hand-paper-o"></i>
+                  <i *ngIf="playerTwo.weapon === 'S'"  class="fa fa-hand-scissors-o"></i>
+                </div>
+            </mat-card-content>   
+        </mat-card>
+        
+      </div>
+
+      <div class="flex-container flex-center" style="flex-direction: column"> 
+          <div *ngIf="theResult">
+            <h1> You're the winner! </h1>
+            <h2 class="winner"> {{ firstWin ? playerOne.name : playerTwo.name}} </h2>
+        </div> 
+            <button (click)="loadData()" class="btn btn-lg btn-block btn-primary"> Play Game</button>
+       </div> 
+      
+       <div class="flex-container flex-left" style="flex-direction: column"> 
+          <div *ngIf="theResult">
+            <h1> You're the winner! </h1>
+            <h2 class="winner"> {{ firstWin ? playerOne.name : playerTwo.name}} </h2>
+        </div> 
+            <button (click)="loadTournment()" class="btn btn-lg btn-block btn-primary"> Play Tournament</button>
+       </div> 

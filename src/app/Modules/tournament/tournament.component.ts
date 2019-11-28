@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TournamentService } from '../tournament.service';
 import { MatTableDataSource } from '@angular/material';
+import { TournamentService } from 'src/app/shared/Services/tournament.service';
 
 @Component({
   selector: 'app-tournament',
@@ -20,16 +20,24 @@ export class TournamentComponent implements OnInit {
     {name: 'David E.', weapon: 'R'},
     {name: 'Richard X.', weapon: 'P'}];
 
-  displayedColumns = ['Player', 'Weapon', 'Winner'];
+  displayedColumns = ['Player', 'Weapon'];
   solicitud: any;
   dataSource: MatTableDataSource<any>;
   dataTabla = [];
-  constructor() { }
+  constructor(private service: TournamentService) { }
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource<any>();
 
     this.dataSource.data = this.playersTournment;
     console.log(this.dataSource.data);
+  }
+
+  ResultTournment(){
+    this.service.rps_tournament_winner(this.playersTournment).subscribe(resp => {
+      if (resp) {
+        console.log(resp);
+      }
+    });
   }
 }
